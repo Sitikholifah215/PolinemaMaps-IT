@@ -9,12 +9,15 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="149dp"
-        android:layout_height="145dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="116dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="53dp"
         android:src="@drawable/loginusr"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="101dp"
@@ -23,32 +26,34 @@
 
     <EditText
         android:id="@+id/editTextUsername"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/buttonLogin"
-        android:layout_alignStart="@+id/editTextPassword"
-        android:layout_alignLeft="@+id/editTextPassword"
-        android:layout_marginStart="-2dp"
-        android:layout_marginLeft="-2dp"
-        android:layout_marginBottom="60dp"
+        android:layout_alignStart="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="-39dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginBottom="138dp"
         android:ems="10"
-        android:textColor="@color/colorPrimary"
         android:hint="Username"
         android:inputType="textPersonName"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:textAlignment="viewStart"
+        android:textColor="@color/colorPrimary"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="67dp"
         tools:layout_editor_absoluteY="108dp" />
 
     <EditText
         android:id="@+id/editTextPassword"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/buttonLogin"
-        android:layout_alignStart="@+id/buttonLogin"
-        android:layout_alignLeft="@+id/buttonLogin"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginBottom="7dp"
+        android:layout_alignStart="@+id/editTextUsername"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginBottom="85dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
@@ -62,18 +67,26 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-
-        android:layout_marginEnd="68dp"
-        android:layout_marginBottom="185dp"
-        android:alpha="0.25"
-        android:color="#66FF0000"
+        android:layout_marginEnd="83dp"
+        android:layout_marginBottom="86dp"
         android:text="Login"
+        android:textSize="20dp"
         android:textAlignment="center"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="67dp"
-        tools:layout_editor_absoluteY="248dp" />
+        tools:layout_editor_absoluteY="248dp"
+        android:background="@drawable/login"
+        android:textColor="@android:color/background_light"
+        />
 
-
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="31dp"
+        android:text="Jika ada masalah silakan Klik  Disini" />
 
 
 </RelativeLayout>
