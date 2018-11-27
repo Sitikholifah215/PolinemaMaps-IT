@@ -20,12 +20,78 @@
         android:src="@drawable/user" />
 
     <TextView
+        android:id="@+id/textviewHai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/icUser"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="123dp"
+        android:layout_marginTop="11dp"
+        android:text="Hai"
+        android:textColor="#fff"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/idNamaUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textviewHai"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="116dp"
+        android:text="#NamaUser"
+        android:textColor="#fff"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/textviewRuangan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="90dp"
         android:text="Ruangan Apa yang Kamu Cari ?"
+        android:textColor="#fff"
         android:textSize="15dp" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/RecyclerviewhorizontalSlide"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="150dp"
+        android:orientation="horizontal">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+        android:layout_below="@+id/RecyclerviewhorizontalSlide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <GridView
+            android:id="@+id/gridview_android_example"
+            android:layout_width="wrap_content"
+            android:layout_height="305dp"
+            android:layout_below="@+id/imageView4"
+
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="2dp"
+            android:columnWidth="100dp"
+            android:gravity="center"
+            android:minHeight="90dp"
+            android:numColumns="auto_fit"
+            android:stretchMode="columnWidth" />
+
+    </LinearLayout>
+
 
 </RelativeLayout>
