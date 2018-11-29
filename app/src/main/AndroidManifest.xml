@@ -17,8 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity_login" />
-
-        <activity android:name=".MainActivity_Home"></activity>
+        <activity android:name=".MainActivity_Home" />
+        <activity android:name=".PesanActivity"></activity>
     </application>
 
 </manifest>
