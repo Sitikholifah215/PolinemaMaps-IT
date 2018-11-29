@@ -78,8 +78,6 @@
             android:id="@+id/gridview_android_example"
             android:layout_width="wrap_content"
             android:layout_height="305dp"
-            android:layout_below="@+id/imageView4"
-
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_gravity="center"
