@@ -9,6 +9,8 @@ class Ruangan extends REST_Controller {
 	function __construct($config = 'rest') {
 	parent::__construct($config);
 	$this->load->database();
+	$this->load->helper('url');
+	$this->load->model('User_model');
 	}
 
 	public function ruangan_get()
@@ -23,7 +25,7 @@ class Ruangan extends REST_Controller {
 		$this->response(array("status"=>"success","result" => $get_gedung));
 	}
 
-	public function user_get()
+	public function index_get()
 	{
 		$id_user = $this->get('id_user');
 		if ($id_user == '') {
@@ -43,10 +45,11 @@ class Ruangan extends REST_Controller {
 		$action = $this->post('action');
 		$data_user = array('id_user' => $this->post('id_user'),
 							  'username' => $this->post('username'),
-							  'password' => $this->post(md5('password')),
+							  'password' => md5($this->post('password')),
 							  'nama_user' => $this->post('nama_user'),
 							  'telpon' => $this->post('telpon'),
-							  'level' => $this->'member');
+							  'photo_user' => $this->post('photo_user'),
+							  'level' => 'member');
 		if ($action==='put'){
 			$this->updateUser($data_user);
 		}else{
@@ -69,7 +72,7 @@ class Ruangan extends REST_Controller {
                 'password' => md5($password),
                 // 'status' => 1
             );
-            $user = $this->user->getRows($con);
+            $user = $this->User_model->getRows($con);
             
             if($user){
                 // Set the response and exit
@@ -128,14 +131,14 @@ class Ruangan extends REST_Controller {
 						$insert_image = "Image Tidak ada Masukan";
 				}
 					if ($insert_image==="success"){
-						$update= $this->db->query("Update user Set username ='".$data_user['username']."', Set password ='".$data_user['password']."', nama_user ='".$data_user['nama_user']."' , telpon ='".$data_user['telpon']."', photo_user ='".$data_user['photo_user']."' Where id_user ='".$data_user['id_user']."'");
+						$update= $this->db->query("Update user Set username ='".$data_user['username']."', password ='".$data_user['password']."', nama_user ='".$data_user['nama_user']."', telpon ='".$data_user['telpon']."', photo_user ='".$data_user['photo_user']."' Where id_user ='".$data_user['id_user']."'");
 						$data_user['photo_user'] = base_url()."upload_user/".$user_img;
 					}else{
-						$update= $this->db->query("Update user Set username ='".$data_user['username']."', Set password ='".$data_user['password']."', nama_user ='".$data_user['nama_user']."' , telpon ='".$data_user['telpon']."' Where id_user ='".$data_user['id_user']."'");
+						$update= $this->db->query("Update user Set username ='".$data_user['username']."', password ='".$data_user['password']."', nama_user ='".$data_user['nama_user']."' , telpon ='".$data_user['telpon']."' Where id_user ='".$data_user['id_user']."'");
 						$getPhotoPath =$this->db->query("SELECT photo_user FROM user Where id_user='".$data_user['id_user']."'")->result();
 						if(!empty($getPhotoPath)){
 							foreach ($getPhotoPath as $row){
-								$user_img = $row->photo_id;
+								$user_img = $row->photo_user;
 								$data_user['photo_user'] = base_url()."upload_user/".$user_img;
 							}
 						}
@@ -154,7 +157,7 @@ class Ruangan extends REST_Controller {
 		// $get_user = $this->db->query("SELECT u.username, u.password, u.telpon, u.photo_user FROM user as u WHERE u.id_user = '".$data_user['Username']."'")->result();
 		// $this->respone(array("status"=>"success","result" => $get_user));
 		// }
-	}
+	
 }
 /* End of file Ruangan.php */
 /* Location: ./application/controllers/Ruangan.php */
