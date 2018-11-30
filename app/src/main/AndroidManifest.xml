@@ -17,12 +17,17 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity_login" />
+<<<<<<< HEAD
         <activity android:name=".MainActivity_Home" />
 
         <activity android:name=".ruang"></activity>
 
         <activity android:name=".PesanActivity"></activity>
 
+=======
+
+        <activity android:name=".MainActivity_Home"></activity>
+>>>>>>> parent of 19c8dae... ruangan
     </application>
 
 </manifest>
