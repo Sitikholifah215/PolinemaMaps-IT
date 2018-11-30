@@ -15,13 +15,13 @@ class Ruangan extends REST_Controller {
 
 	public function ruangan_get()
 	{
-		$get_ruangan = $this->db->query("SELECT r.kd_ruangan, r.nm_ruangan, r.kd_gedung, g.nm_gedung, r.photo_ruangan FROM ruangan as r JOIN gedung as g on r.kd_gedung = g.kd_gedung")->result();
+		$get_ruangan = $this->db->query("SELECT r.kd_ruangan, r.nm_ruangan, r.kd_gedung, g.nm_gedung, r.latitude, r.longitude,r.photo_ruangan FROM ruangan as r JOIN gedung as g on r.kd_gedung = g.kd_gedung")->result();
 		$this->response(array("status"=>"success","result" => $get_ruangan));
 	}
 
 	public function gedung_get()
 	{
-		$get_gedung = $this->db->query("SELECT g.kd_gedung, g.nm_gedung, g.photo_gedung FROM gedung as g")->result();
+		$get_gedung = $this->db->query("SELECT g.kd_gedung, g.nm_gedung, g.photo_gedung, g.latitude, g.longitude FROM gedung as g")->result();
 		$this->response(array("status"=>"success","result" => $get_gedung));
 	}
 
@@ -48,8 +48,7 @@ class Ruangan extends REST_Controller {
 							  'password' => md5($this->post('password')),
 							  'nama_user' => $this->post('nama_user'),
 							  'telpon' => $this->post('telpon'),
-							  'photo_user' => $this->post('photo_user'),
-							  'level' => 'member');
+							  'photo_user' => $this->post('photo_user'));
 		if ($action==='put'){
 			$this->updateUser($data_user);
 		}else{
@@ -102,7 +101,7 @@ class Ruangan extends REST_Controller {
 			$path = $_FILES['photo_user']['name'];
 			$user_img = $data_user['id_user'].'.' ."png";
 			$uploadfile = $uploaddir . $user_img;
-			$data_user['photo_user'] = "application/upload_user/".$user_img;
+			$data_user['photo_user'] = $user_img;
 		}
 		if (empty($data_user['id_user'])){
 			$this->response(array('status' => "failed", "message"=>"Id User harus diisi"));
