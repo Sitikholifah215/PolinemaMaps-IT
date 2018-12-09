@@ -5,6 +5,7 @@
     android:layout_height="300dp"
     android:padding="5dp"
     android:layout_gravity="center"
+    android:background="#fff"
     >
 
 
