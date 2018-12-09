@@ -21,7 +21,8 @@
         <activity android:name=".PesanActivity" />
         <activity android:name=".profil" />
         <activity android:name=".MainActivity_ruangan" />
-        <activity android:name=".MainActivity_gedung"></activity>
+        <activity android:name=".MainActivity_gedung" />
+        <activity android:name=".sunting_Activity"></activity>
     </application>
 
 </manifest>

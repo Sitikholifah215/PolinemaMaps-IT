@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".profil"
-    android:background="@drawable/bg"
-    >
+    android:background="@drawable/bg_utama">
 
     <Button
         android:id="@+id/button_back"
@@ -20,27 +19,15 @@
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
 
-    <Button
-        android:id="@+id/button_logout"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="334dp"
-        android:layout_marginTop="0dp"
-        android:background="@drawable/logout"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
-
     <TextView
         android:id="@+id/textView_User"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/imageView4"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="32dp"
         android:text="#HeloUser"
-        android:textSize="32dp" />
+        android:textSize="25dp" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -48,50 +35,148 @@
         android:layout_height="104dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="91dp"
-        app:srcCompat="@drawable/image_user" />
+        android:layout_marginTop="74dp"
+        app:srcCompat="@mipmap/ic_launcher" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="3dp"
-        android:layout_toEndOf="@+id/button_back"
-        android:text="NIM/NIDN   :"
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/textView_nimnidn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="136dp"
-        android:layout_toEndOf="@+id/button_back"
-        android:text="#######"
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <LinearLayout
+        android:layout_width="297dp"
+        android:layout_height="211dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="192dp"
+        android:layout_marginStart="-6dp"
+        android:layout_marginBottom="82dp"
         android:layout_toEndOf="@+id/button_back"
-        android:text="Password   :"
-        android:textSize="20dp" />
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/nim" />
+
+            <TextView
+                android:id="@+id/nim_profil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="6dp"
+                android:text="NIM"
+                android:textColor="#000"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/nama_profil" />
+
+            <TextView
+                android:id="@+id/nama_profil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="6dp"
+                android:text="Nama"
+                android:textColor="#000"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/password_profil" />
+
+            <TextView
+                android:id="@+id/password_profil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="6dp"
+                android:text="Password"
+                android:textColor="#000"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="229dp"
-        android:layout_toEndOf="@+id/button_back"
-        android:text="Nama          :"
-        android:textSize="20dp" />
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="314dp"
+        android:gravity="center">
 
+        <LinearLayout
+            android:id="@+id/linier_Sunting"
+            android:layout_width="125dp"
+            android:layout_height="35dp"
+            android:background="@drawable/sunting_profil"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/img_sunting_profil" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="11dp"
+                android:text="Sunting"
+                android:textColor="#000"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linier_keluar"
+            android:layout_width="125dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/keluar_profil"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/img_exit_profil" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="11dp"
+                android:text="Keluar"
+                android:textColor="#000"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
 
 </RelativeLayout>
