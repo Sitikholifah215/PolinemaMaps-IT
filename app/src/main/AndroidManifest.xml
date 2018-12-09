@@ -23,7 +23,9 @@
         <activity android:name=".MainActivity_ruangan" />
         <activity android:name=".MainActivity_gedung" />
         <activity android:name=".sunting_Activity" />
+
         <activity android:name=".detail_Ruangan_Activity"></activity>
+        <activity android:name=".MainActivity_detailGedung"></activity>
     </application>
 
 </manifest>
