@@ -6,6 +6,7 @@
     android:background="#6e74dc"
     android:padding="5dp"
     android:layout_gravity="center"
+    android:background="#fff"
     >
 
 
