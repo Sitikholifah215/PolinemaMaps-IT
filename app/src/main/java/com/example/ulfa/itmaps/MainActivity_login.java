@@ -19,10 +19,14 @@ import android.widget.TextView;
 public class MainActivity_login extends AppCompatActivity {
     Dialog popup;
     Button btn_login;
+
+    Button cGedung, cRuang;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_login);
+
+
         btn_login = (Button)findViewById(R.id.buttonLogin) ;
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
