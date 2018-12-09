@@ -18,8 +18,10 @@
         </activity>
         <activity android:name=".MainActivity_login" />
         <activity android:name=".MainActivity_Home" />
-        <activity android:name=".PesanActivity"></activity>
-        <activity android:name=".profil"></activity>
+        <activity android:name=".PesanActivity" />
+        <activity android:name=".profil" />
+        <activity android:name=".MainActivity_ruangan" />
+        <activity android:name=".MainActivity_gedung"></activity>
     </application>
 
 </manifest>
