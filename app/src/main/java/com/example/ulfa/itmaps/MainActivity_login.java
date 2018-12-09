@@ -13,14 +13,24 @@ import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity_login extends AppCompatActivity {
     Dialog popup;
+    Button btn_login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_login);
+        btn_login = (Button)findViewById(R.id.buttonLogin) ;
+        btn_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity_login.this, MainActivity_Home.class);
+                startActivity(i);
+            }
+        });
 
         popup = new Dialog(this);
 

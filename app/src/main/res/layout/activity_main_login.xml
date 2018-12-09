@@ -26,14 +26,14 @@
 
     <EditText
         android:id="@+id/editTextUsername"
-        android:layout_width="350dp"
+        android:layout_width="336dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/buttonLogin"
         android:layout_alignStart="@+id/imageView"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="-39dp"
         android:layout_marginLeft="28dp"
-        android:layout_marginBottom="138dp"
+        android:layout_marginBottom="137dp"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
@@ -47,13 +47,13 @@
 
     <EditText
         android:id="@+id/editTextPassword"
-        android:layout_width="350dp"
+        android:layout_width="335dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/buttonLogin"
         android:layout_alignStart="@+id/editTextUsername"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="34dp"
-        android:layout_marginBottom="85dp"
+        android:layout_marginBottom="83dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
