@@ -1,24 +1,43 @@
 package com.example.ulfa.itmaps;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.ulfa.itmaps.Adapter.Rec_slide_adapter;
+import com.example.ulfa.itmaps.Models.ResultRuangan;
+import com.example.ulfa.itmaps.Models.RuanganModel;
+import com.example.ulfa.itmaps.Rest.ApiClient;
+import com.example.ulfa.itmaps.Rest.ApiInterface;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class MainActivity_Home extends AppCompatActivity {
-    private RecyclerView.LayoutManager laymanager;
-    private RecyclerView.Adapter madapter;
+    RecyclerView mSlideview;
+    RecyclerView.LayoutManager laymanager;
+    RecyclerView.Adapter madapter;
+    Context mContext;
+    ApiInterface mApiInterface;
     CardView chat, ruangan, gedung;
     ImageView profile;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main__home);
+        initRecyclerview_SlideImage();
 
         chat = (CardView)findViewById(R.id.menu_chat);
         chat.setOnClickListener(new View.OnClickListener() {
@@ -59,10 +78,26 @@ public class MainActivity_Home extends AppCompatActivity {
 
     }
     private void  initRecyclerview_SlideImage(){
+        mContext = getApplicationContext();
+        mSlideview = (RecyclerView) findViewById(R.id.RecyclerviewhorizontalSlide);
+        laymanager = new LinearLayoutManager(mContext,LinearLayoutManager.HORIZONTAL,false);
+        mSlideview.setLayoutManager(laymanager);
+        mApiInterface = ApiClient.getClient().create(ApiInterface.class);
+        Call<ResultRuangan> mResultRuangan = mApiInterface.getRuangan();
+        mResultRuangan.enqueue(new Callback<ResultRuangan>() {
+            @Override
+            public void onResponse(Call<ResultRuangan> call, Response<ResultRuangan> response) {
+                Log.d("Get Ruangan Image", response.body().getStatus());
+                List<RuanganModel> listRuanganImage = response.body().getResult();
+                madapter = new Rec_slide_adapter(listRuanganImage);
+                mSlideview.setAdapter(madapter);
+            }
 
-        laymanager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
-        RecyclerView recyclerViewww = findViewById(R.id.RecyclerviewhorizontalSlide);
-        recyclerViewww.setLayoutManager(laymanager);
+            @Override
+            public void onFailure(Call<ResultRuangan> call, Throwable t) {
+                Log.d("Get Ruangan Image",t.getMessage());
+            }
+        });
 
 //            madapter = new Rec_slide_adapter(mImagesUrl,this);
 //            recyclerViewww.setAdapter(madapter);
