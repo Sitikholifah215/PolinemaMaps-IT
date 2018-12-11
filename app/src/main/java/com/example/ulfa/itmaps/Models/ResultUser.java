@@ -8,12 +8,19 @@ import java.util.List;
 public class ResultUser {
     @SerializedName("status")
     private String status;
-    @SerializedName("message")
-    private String message;
-    @SerializedName("data")
-    private List<UserModel> data = new ArrayList<UserModel>();
 
-    public ResultUser() {}
+    @SerializedName("result") private User user;
+
+//    @SerializedName("message")
+//    private String message;
+//
+//    @SerializedName("data")
+//    private List<UserModel> data = new ArrayList<UserModel>();
+
+    public ResultUser(String status , User user) {
+        this.status = status;
+        this.user = user;
+    }
 
     public String getStatus() {
         return status;
@@ -23,15 +30,12 @@ public class ResultUser {
         this.status = status;
     }
 
-    public List<UserModel> getData() {
-        return data;
+
+    public User getUser() {
+        return user;
     }
 
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

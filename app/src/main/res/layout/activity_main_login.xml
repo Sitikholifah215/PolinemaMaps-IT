@@ -70,6 +70,10 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="31dp"
+<<<<<<< HEAD
+        android:text="Jika ada masalah silakan Klik  Disini" />
+
+=======
         android:text="Jika ada masalah silakan Klik  Disini"
         android:textColor="#000"
         />
@@ -88,6 +92,7 @@
         android:textAlignment="center"
         android:textSize="80sp"
         android:textStyle="bold|italic" />
+>>>>>>> 5fdf33361781ea3f4aa1afe4ce0c0a7431a7ea04
 
 
 </RelativeLayout>
