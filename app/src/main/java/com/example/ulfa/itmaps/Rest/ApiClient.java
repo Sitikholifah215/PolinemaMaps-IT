@@ -4,10 +4,10 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
-    public static final String BASE_URL = "http://192.168.64.40:8080/RestApi/index.php/";
-    public static final String BASE_IMAGE_RUANGAN = "http://192.168.64.40:8080/RestApi/application/upload_ruangan/";
-    public static final String BASE_IMAGE_GEDUNG = "http://192.168.64.40:8080/RestApi/application/upload_gedung/";
-    public static final String BASE_IMAGE_USER = "http://192.168.64.40:8080/RestApi/application/upload_user/";
+    public static final String BASE_URL = "http://192.168.71.119:8080/RestApi/index.php/";
+    public static final String BASE_IMAGE_RUANGAN = "http://192.168.71.119:8080/RestApi/application/upload_ruangan/";
+    public static final String BASE_IMAGE_GEDUNG = "http://192.168.71.119:8080/RestApi/application/upload_gedung/";
+    public static final String BASE_IMAGE_USER = "http://192.168.71.1 19:8080/RestApi/application/upload_user/";
 
     private static Retrofit retrofit = null;
     public static Retrofit getClient() {

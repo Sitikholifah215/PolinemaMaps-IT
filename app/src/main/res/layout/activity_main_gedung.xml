@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_utama"
-    tools:context=".MainActivity_gedung">
+    tools:context=".MainActivity_Gedung">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_main"
