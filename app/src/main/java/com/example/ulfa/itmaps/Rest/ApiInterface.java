@@ -1,5 +1,6 @@
 package com.example.ulfa.itmaps.Rest;
 
+import com.example.ulfa.itmaps.Models.ResultGedung;
 import com.example.ulfa.itmaps.Models.ResultRuangan;
 import com.example.ulfa.itmaps.Models.ResultUser;
 
@@ -22,8 +23,17 @@ public interface ApiInterface {
     @GET("ruangan/ruangan")
     Call<ResultRuangan> getRuangan();
 
+    @GET("gedung/gedung")
+    Call<ResultGedung> getGedung();
+
+    @Multipart
+    @POST("ruangan/login")
+    Call<ResultUser> postLogin(@Part("username")RequestBody username,
+                               @Part("password")RequestBody password);
+
 //    @Multipart
 //    @POST("ruangan/login")
 //    Call<ResultUser> postLogin(@Part("username")RequestBody username,
 //                               @Part("password")RequestBody password);
+
 }

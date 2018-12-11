@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
 import com.example.ulfa.itmaps.Adapter.Rec_slide_adapter;
+import com.example.ulfa.itmaps.Adapter.RuanganViewAdapter;
 import com.example.ulfa.itmaps.Models.ResultRuangan;
 import com.example.ulfa.itmaps.Models.RuanganModel;
 import com.example.ulfa.itmaps.Rest.ApiClient;
@@ -45,7 +46,7 @@ public class MainActivity_ruangan extends AppCompatActivity {
             public void onResponse(Call<ResultRuangan> call, Response<ResultRuangan> response) {
                 Log.d("Get Ruangan", response.body().getStatus());
                 List<RuanganModel> listRuanganView = response.body().getResult();
-                mAdapter = new Rec_slide_adapter(listRuanganView);
+                mAdapter = new RuanganViewAdapter(listRuanganView);
                 mRuanganview.setAdapter(mAdapter);
             }
 
