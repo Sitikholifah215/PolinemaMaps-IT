@@ -61,7 +61,7 @@ public class MainActivity_Home extends AppCompatActivity {
         gedung.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity_Home.this,MainActivity_gedung.class);
+                Intent i = new Intent(MainActivity_Home.this,MainActivity_Gedung.class);
                 startActivity(i);
             }
         });
