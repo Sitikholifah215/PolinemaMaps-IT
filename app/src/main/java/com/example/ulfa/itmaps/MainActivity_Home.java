@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.ulfa.itmaps.Adapter.Rec_slide_adapter;
 import com.example.ulfa.itmaps.Models.ResultRuangan;
@@ -31,6 +32,7 @@ public class MainActivity_Home extends AppCompatActivity {
     ApiInterface mApiInterface;
     CardView chat, ruangan, gedung;
     ImageView profile;
+    TextView NamaUser;
 
 
     @Override
@@ -38,6 +40,12 @@ public class MainActivity_Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main__home);
         initRecyclerview_SlideImage();
+        NamaUser = (TextView)findViewById(R.id.idNamaUser);
+        Intent i = getIntent();
+        String namaUser = i.getStringExtra("nama_user");
+        NamaUser.setText(namaUser);
+
+
 
         chat = (CardView)findViewById(R.id.menu_chat);
         chat.setOnClickListener(new View.OnClickListener() {

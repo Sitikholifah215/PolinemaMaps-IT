@@ -68,6 +68,7 @@ public class MainActivity_login extends AppCompatActivity {
                             User user = response.body().getUser();
                             Intent i = new Intent(MainActivity_login.this, MainActivity_Home.class);
                             i.putExtra("username", user.getUsername());
+                            i.putExtra("nama_user", user.getNama_user());
 
                             startActivity(i);
 

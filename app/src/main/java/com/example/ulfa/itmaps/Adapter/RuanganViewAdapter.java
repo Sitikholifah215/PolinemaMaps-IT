@@ -48,7 +48,7 @@ public class RuanganViewAdapter extends RecyclerView.Adapter<RuanganViewAdapter.
         TextView txt_kd_ruangan, txt_nm_ruangan;
         public RuanganViewHolder(View itemView) {
             super(itemView);
-            img_ruangan = itemView.findViewById(R.id.img_list_ruangan);
+            img_ruangan = itemView.findViewById(R.id.img_list_gedung);
             txt_kd_ruangan = itemView.findViewById(R.id.txt_kd_r);
             txt_nm_ruangan = itemView.findViewById(R.id.txt_nm_r);
         }

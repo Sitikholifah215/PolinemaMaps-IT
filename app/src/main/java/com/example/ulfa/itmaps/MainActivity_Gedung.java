@@ -8,11 +8,8 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
 import com.example.ulfa.itmaps.Adapter.GedungViewAdapter;
-import com.example.ulfa.itmaps.Adapter.Rec_slide_adapter;
 import com.example.ulfa.itmaps.Models.GedungModel;
 import com.example.ulfa.itmaps.Models.ResultGedung;
-import com.example.ulfa.itmaps.Models.ResultRuangan;
-import com.example.ulfa.itmaps.Models.RuanganModel;
 import com.example.ulfa.itmaps.Rest.ApiClient;
 import com.example.ulfa.itmaps.Rest.ApiInterface;
 
@@ -34,9 +31,10 @@ public class MainActivity_Gedung extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_gedung);
+        initRecyclerGedung();
     }
 
-    private void initRecyclerRuangan() {
+    private void initRecyclerGedung() {
         mContext = getApplicationContext();
         mGedungview = (RecyclerView) findViewById(R.id.rv_maingedung);
         mlayoutm = new LinearLayoutManager(mContext);

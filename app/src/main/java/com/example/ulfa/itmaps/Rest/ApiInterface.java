@@ -23,7 +23,7 @@ public interface ApiInterface {
     @GET("ruangan/ruangan")
     Call<ResultRuangan> getRuangan();
 
-    @GET("gedung/gedung")
+    @GET("ruangan/gedung")
     Call<ResultGedung> getGedung();
 
     @Multipart

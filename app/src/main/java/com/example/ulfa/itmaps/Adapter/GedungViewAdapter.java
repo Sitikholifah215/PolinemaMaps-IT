@@ -31,13 +31,13 @@ public class GedungViewAdapter extends RecyclerView.Adapter<GedungViewAdapter.Ge
     public void onBindViewHolder(GedungViewAdapter.GedungViewHolder gedungViewHolder, final int position) {
         gedungViewHolder.kd_gedung.setText(listgedung.get(position).getKd_gedung());
         gedungViewHolder.nm_gedung.setText(listgedung.get(position).getNm_gedung());
-        if (listgedung.get(position).getPhoto_gedung().length()>0){
-            //Picasso.with(holder.itemView.getContext()).load(ApiClient.BASE_URL+listPembeli.get(position).getPhotoId()).into(holder.mPhotoid);
-            Glide.with(gedungViewHolder.itemView.getContext()).load(ApiClient.BASE_IMAGE_RUANGAN+listgedung.get(position).getPhoto_gedung()).into(gedungViewHolder.img_gedung_list);
-        }else {
-            //Picasso.with(holder.itemView.getContext()).load(R.drawable.photoid).into(holder.mPhotoid);
-            Glide.with(gedungViewHolder.itemView.getContext()).load(R.mipmap.ic_launcher).into(gedungViewHolder.img_gedung_list);
-        }
+//        if (listgedung.get(position).getPhoto_gedung().length()>0){
+//            //Picasso.with(holder.itemView.getContext()).load(ApiClient.BASE_URL+listPembeli.get(position).getPhotoId()).into(holder.mPhotoid);
+//            Glide.with(gedungViewHolder.itemView.getContext()).load(ApiClient.BASE_IMAGE_RUANGAN+listgedung.get(position).getPhoto_gedung()).into(gedungViewHolder.img_gedung_list);
+//        }else {
+//            //Picasso.with(holder.itemView.getContext()).load(R.drawable.photoid).into(holder.mPhotoid);
+////            Glide.with(gedungViewHolder.itemView.getContext()).load(R.mipmap.ic_launcher).into(gedungViewHolder.img_gedung_list);
+//        }
     }
 
     @Override
@@ -46,13 +46,11 @@ public class GedungViewAdapter extends RecyclerView.Adapter<GedungViewAdapter.Ge
     }
 
     public class GedungViewHolder extends RecyclerView.ViewHolder{
-        ImageView img_gedung_list;
         TextView kd_gedung, nm_gedung;
         public GedungViewHolder(View itemView){
             super(itemView);
-            img_gedung_list = itemView.findViewById(R.id.img_list_gedung);
-            kd_gedung = itemView.findViewById(R.id.txt_kd_gedung);
-            nm_gedung = itemView.findViewById(R.id.txt_nm_gedung);
+            kd_gedung = itemView.findViewById(R.id.txt_kode_gdg);
+            nm_gedung = itemView.findViewById(R.id.txt_nama_gdg);
         }
     }
 
