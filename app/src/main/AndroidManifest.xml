@@ -33,6 +33,7 @@
         <activity android:name=".MainActivity_ruangan" />
         <activity android:name=".sunting_Activity" />
         <activity android:name=".detail_Ruangan_Activity" />
+
         <activity android:name=".detail_Gedung_Activity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -49,7 +50,7 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".MainActivity_gedung"></activity>
+
     </application>
 
 </manifest>
