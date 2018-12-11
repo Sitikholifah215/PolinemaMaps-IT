@@ -8,7 +8,7 @@
     tools:context=".MainActivity_gedung">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_main"
+        android:id="@+id/rv_maingedung"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
