@@ -56,40 +56,58 @@ class Ruangan extends REST_Controller {
 		}
 	}
 
-    public function login_post() {
-        // Get the post data
-        $username = $this->post('username');
-        $password = $this->post('password');
-        
-        // Validate the post data
-        if(!empty($username) && !empty($password)){
-            
-            // Check if any user exists with the given credentials
-            $con['returnType'] = 'single';
-            $con['conditions'] = array(
-                'username' => $username,
-                'password' => md5($password),
-                // 'status' => 1
-            );
-            $user = $this->User_model->getRows($con);
-            
-            if($user){
-                // Set the response and exit
-                $this->response([
-                    'status' => TRUE,
-                    'message' => 'User login successful.',
-                    'data' => $user
-                ], REST_Controller::HTTP_OK);
-            }else{
-                // Set the response and exit
-                //BAD_REQUEST (400) being the HTTP response code
-                $this->response("Wrong username or password.", REST_Controller::HTTP_BAD_REQUEST);
-            }
-        }else{
-            // Set the response and exit
-            $this->response("Provide username and password.", REST_Controller::HTTP_BAD_REQUEST);
+	public function login_post()
+	{
+        $this->db->select('*');
+        $this->db->from('user');
+        $this->db->where('username', $this->input->post('username'));
+        $query = $this->db->get();
+        $row = $query->first_row();
+
+
+        if($query->num_rows()==1){
+            return $this->response(array('status' => 'success', 'result' => $row));
+        }
+        else{
+            return $this->response(array('status'=> 'failed',502));
         }
     }
+
+
+    // public function login_post() {
+    //     // Get the post data
+    //     $username = $this->post('username');
+    //     $password = $this->post('password');
+        
+    //     // Validate the post data
+    //     if(!empty($username) && !empty($password)){
+            
+    //         // Check if any user exists with the given credentials
+    //         $con['returnType'] = 'single';
+    //         $con['conditions'] = array(
+    //             'username' => $username,
+    //             'password' => md5($password),
+    //             // 'status' => 1
+    //         );
+    //         $user = $this->User_model->getRows($con);
+            
+    //         if($user){
+    //             // Set the response and exit
+    //             $this->response([
+    //                 'status' => TRUE,
+    //                 'message' => 'User login successful.',
+    //                 'data' => $user
+    //             ], REST_Controller::HTTP_OK);
+    //         }else{
+    //             // Set the response and exit
+    //             //BAD_REQUEST (400) being the HTTP response code
+    //             $this->response("Wrong username or password.", REST_Controller::HTTP_BAD_REQUEST);
+    //         }
+    //     }else{
+    //         // Set the response and exit
+    //         $this->response("Provide username and password.", REST_Controller::HTTP_BAD_REQUEST);
+    //     }
+    // }
 
 
     function updateUser($data_user){
