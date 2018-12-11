@@ -87,7 +87,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="31dp"
         android:text="Jika ada masalah silakan Klik  Disini" />
-    
+
 
 
 </RelativeLayout>
