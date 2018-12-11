@@ -1,6 +1,5 @@
 package com.example.ulfa.itmaps.Adapter;
 
-import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +8,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.ulfa.itmaps.Models.ResultRuangan;
 import com.example.ulfa.itmaps.Models.RuanganModel;
 import com.example.ulfa.itmaps.R;
 import com.example.ulfa.itmaps.Rest.ApiClient;

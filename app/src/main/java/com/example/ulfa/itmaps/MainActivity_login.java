@@ -12,13 +12,29 @@ import android.text.Spanned;
 import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.ulfa.itmaps.Models.ResultUser;
+import com.example.ulfa.itmaps.Models.UserModel;
+import com.example.ulfa.itmaps.Rest.ApiClient;
+import com.example.ulfa.itmaps.Rest.ApiInterface;
+
+import java.util.List;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class MainActivity_login extends AppCompatActivity {
     Dialog popup;
     Button btn_login;
+    TextView txt_username, txt_password;
 
     Button cGedung, cRuang;
     @Override
@@ -26,13 +42,33 @@ public class MainActivity_login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_login);
 
-
+        txt_username = (TextView)findViewById(R.id.editTextUsername);
+        txt_password = (TextView)findViewById(R.id.editTextPassword);
         btn_login = (Button)findViewById(R.id.buttonLogin) ;
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity_login.this, MainActivity_Home.class);
-                startActivity(i);
+                ApiInterface mApiInterface = ApiClient.getClient().create(ApiInterface.class);
+                RequestBody reqUsername = MultipartBody.create(MediaType.parse("multipart/form-data"),
+                        txt_username.getText().toString());
+                RequestBody resPassword = MultipartBody.create(MediaType.parse("multipart/form-data"),
+                        txt_password.getText().toString());
+                Call<ResultUser> mUser =  mApiInterface.postLogin(reqUsername,resPassword);
+                mUser.enqueue(new Callback<ResultUser>() {
+                    @Override
+                    public void onResponse(Call<ResultUser> call, Response<ResultUser> response) {
+                        Log.d("Status", response.body().getStatus());
+//                        List<UserModel> mUser = response.body().getData();
+                        Intent i = new Intent(getApplicationContext(), MainActivity_Home.class);
+                        startActivity(i);
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResultUser> call, Throwable t) {
+                        Log.d("Status", t.getMessage());
+
+                    }
+                });
             }
         });
 

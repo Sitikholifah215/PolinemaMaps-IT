@@ -1,6 +1,5 @@
 package com.example.ulfa.itmaps.Adapter;
 
-import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +12,6 @@ import com.example.ulfa.itmaps.Models.RuanganModel;
 import com.example.ulfa.itmaps.R;
 import com.example.ulfa.itmaps.Rest.ApiClient;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Rec_slide_adapter extends RecyclerView.Adapter<Rec_slide_adapter.SlideViewHolder> {
