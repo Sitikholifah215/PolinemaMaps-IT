@@ -1,5 +1,6 @@
 package com.example.ulfa.itmaps.Rest;
 
+import com.example.ulfa.itmaps.Models.GedungModel;
 import com.example.ulfa.itmaps.Models.ResultDetailG;
 import com.example.ulfa.itmaps.Models.ResultGedung;
 import com.example.ulfa.itmaps.Models.ResultRuangan;
@@ -32,8 +33,7 @@ public interface ApiInterface {
     @GET("ruangan/gedung")
     Call<ResultGedung> getGedung();
 
-    @GET("ruangan/detailgedung")
-    Call<ResultDetailG> getGedungDetail(@Query("kd_gedung") String gedung);
-
+//    @GET("ruangan/detailgedung")
+//    Call<ResultDetailG> kd_gedung(@Query("kd_gedung") String kd_gedung);
 
 }

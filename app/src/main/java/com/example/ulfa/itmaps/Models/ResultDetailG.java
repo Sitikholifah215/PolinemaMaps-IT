@@ -7,11 +7,11 @@ public class ResultDetailG {
     private String status;
 
     @SerializedName("result")
-    private GedungModel gedung;
+    private GedungModel result;
 
-    public ResultDetailG(String status , GedungModel gedung) {
+    public ResultDetailG(String status , GedungModel result) {
         this.status = status;
-        this.gedung = gedung;
+        this.result = result;
     }
 
     public String getStatus() {
@@ -24,11 +24,11 @@ public class ResultDetailG {
 
 
     public GedungModel getGedung() {
-        return gedung;
+        return result;
     }
 
-    public void setGedung(GedungModel gedung) {
-        this.gedung = gedung;
+    public void setGedung(GedungModel result) {
+        this.result = result;
     }
 }
 

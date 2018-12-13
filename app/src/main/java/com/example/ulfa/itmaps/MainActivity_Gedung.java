@@ -60,6 +60,10 @@ public class MainActivity_Gedung extends AppCompatActivity {
                         Toast.makeText(mContext, "KD Gedung : "+gedungm.getKd_gedung(), Toast.LENGTH_LONG).show();
                         Intent i = new Intent(mContext, detail_Gedung_Activity.class);
                         i.putExtra("kd_gedung",gedungm.getKd_gedung());
+                        i.putExtra("nm_gedung",gedungm.getNm_gedung());
+                        i.putExtra("photo_gedung",gedungm.getPhoto_gedung());
+                        i.putExtra("latitude",gedungm.getLatitude());
+                        i.putExtra("longitude",gedungm.getLongitude());
                         startActivity(i);
                     }
 

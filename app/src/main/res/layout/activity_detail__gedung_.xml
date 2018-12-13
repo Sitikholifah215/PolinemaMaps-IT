@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".detail_Gedung_Activity">
 
+    <TextView
+        android:id="@+id/text_namaGedung"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageView6"
+        android:gravity="center"
+        android:text="Nama Gedung"
+        android:textColor="@android:color/black"
+        android:textSize="20sp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="162dp"
@@ -22,7 +33,7 @@
         <ImageView
             android:id="@+id/img_detail_gedung"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="131dp"
             android:src="@mipmap/ic_launcher_round" />
 
     </LinearLayout>
@@ -51,16 +62,13 @@
                 android:layout_height="61dp"
                 android:src="@drawable/maps" />
 
-            <TextView
-                android:id="@+id/lokasi"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="6dp"
-                android:text="NIM"
-                android:textColor="#000"
-                android:textSize="18dp" />
+            <Button
+                android:id="@+id/btn_Maps"
+                android:layout_width="255dp"
+                android:layout_height="51dp"
+                android:layout_weight="1"
+                android:text="Click Maps" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -107,7 +115,7 @@
         android:background="@drawable/back" />
 
     <TextView
-        android:id="@+id/textView_namaGedung"
+        android:id="@+id/textView_kodeGedung"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
