@@ -8,7 +8,7 @@ import java.util.List;
 public class ResultUser {
     @SerializedName("status")
     private String status;
-
+    @SerializedName("password") private  User password;
     @SerializedName("result") private User user;
 
 //    @SerializedName("message")
@@ -17,9 +17,10 @@ public class ResultUser {
 //    @SerializedName("data")
 //    private List<UserModel> data = new ArrayList<UserModel>();
 
-    public ResultUser(String status , User user) {
+    public ResultUser(String status , User user, User password) {
         this.status = status;
         this.user = user;
+        this.password = password;
     }
 
     public String getStatus() {
@@ -37,5 +38,13 @@ public class ResultUser {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public User getPassword() {
+        return password;
+    }
+
+    public void setPassword(User password) {
+        this.password = password;
     }
 }

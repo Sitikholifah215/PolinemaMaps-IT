@@ -54,11 +54,8 @@ public class MainActivity_login extends AppCompatActivity {
 
                 ApiInterface mApiInterface = ApiClient.getClient().create(ApiInterface.class);
 
-//                RequestBody reqUsername = MultipartBody.create(MediaType.parse("multipart/form-data"),
-//                        txt_username.getText().toString());
-//                RequestBody resPassword = MultipartBody.create(MediaType.parse("multipart/form-data"),
-//                        txt_password.getText().toString());
-                Call<ResultUser> mLogin =  mApiInterface.loginRequest(txt_username.getText().toString());
+                Call<ResultUser> mLogin =  mApiInterface.loginRequest(txt_username.getText().toString(),txt_password.getText().toString());
+
                 mLogin.enqueue(new Callback<ResultUser>() {
                     @Override
                     public void onResponse(Call<ResultUser> call, Response<ResultUser> response) {
@@ -124,4 +121,7 @@ public class MainActivity_login extends AppCompatActivity {
         textView.setText(ss);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
     }
+
+
+
 }
