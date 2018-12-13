@@ -1,17 +1,22 @@
 package com.example.ulfa.itmaps;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
 
 import com.example.ulfa.itmaps.Adapter.GedungViewAdapter;
 import com.example.ulfa.itmaps.Models.GedungModel;
 import com.example.ulfa.itmaps.Models.ResultGedung;
 import com.example.ulfa.itmaps.Rest.ApiClient;
 import com.example.ulfa.itmaps.Rest.ApiInterface;
+import com.example.ulfa.itmaps.listener.ClickListener;
+import com.example.ulfa.itmaps.listener.RecyclerTouchListener;
 
 import java.util.List;
 
@@ -48,6 +53,21 @@ public class MainActivity_Gedung extends AppCompatActivity {
                 List<GedungModel> listGedungView = response.body().getResult();
                 mAdapter = new GedungViewAdapter(listGedungView);
                 mGedungview.setAdapter(mAdapter);
+                mGedungview.addOnItemTouchListener(new RecyclerTouchListener(mContext, mGedungview, new ClickListener() {
+                    @Override
+                    public void onClick(View view, int position) {
+                        GedungModel gedungm = listGedungView.get(position);
+                        Toast.makeText(mContext, "KD Gedung : "+gedungm.getKd_gedung(), Toast.LENGTH_LONG).show();
+                        Intent i = new Intent(mContext, detail_Gedung_Activity.class);
+                        i.putExtra("kd_gedung",gedungm.getKd_gedung());
+                        startActivity(i);
+                    }
+
+                    @Override
+                    public void onLongClick(View view, int posi) {
+
+                    }
+                }));
             }
 
             @Override

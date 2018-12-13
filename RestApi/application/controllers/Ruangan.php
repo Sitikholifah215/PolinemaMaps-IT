@@ -25,6 +25,27 @@ class Ruangan extends REST_Controller {
 		$this->response(array("status"=>"success","result" => $get_gedung));
 	}
 
+	public function detailgedung_get()
+	{
+		$kd_gedung = $this->get('kd_gedung');
+		$get_gedung = $this->db->query("SELECT g.kd_gedung, g.nm_gedung, g.photo_gedung, g.latitude, g.longitude FROM gedung as g 
+			where g.kd_gedung='".$kd_gedung."'")->result();
+		$this->response(array("status"=>"success","result" => $get_gedung));
+
+		// $this->db->select('*');
+		// $this->db->from('gedung');
+		// $this->db->where('kd_gedung', $kd_gedung);
+		// $query = $this->db->get();
+		// $row = $query->first_row();
+
+		// if ($query->num_rows()==1) {
+		// 	return $this->response(array('status' => 'success', 'result' => $row));
+  //       }
+  //       else{
+  //           return $this->response(array('status'=> 'failed',502));
+  //       }
+	}
+
 	public function index_get()
 	{
 		$id_user = $this->get('id_user');

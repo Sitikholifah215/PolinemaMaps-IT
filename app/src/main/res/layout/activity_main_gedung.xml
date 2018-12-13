@@ -10,10 +10,11 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_maingedung"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="424dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="128dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="143dp"
         android:scrollbars="vertical" />
 
     <ImageView
