@@ -12,15 +12,15 @@ public class RuanganModel {
     @SerializedName("nm_gedung")
     private String nm_gedung;
     @SerializedName("latitude")
-    private String latitude;
+    private Double latitude;
     @SerializedName("longitude")
-    private String longitude;
+    private Double longitude;
     @SerializedName("photo_ruangan")
     private String photo_ruangan;
 
     public RuanganModel(){}
 
-    public RuanganModel(String kd_ruangan, String nm_ruangan, String kd_gedung, String nm_gedung, String latitude, String longitude, String photo_ruangan) {
+    public RuanganModel(String kd_ruangan, String nm_ruangan, String kd_gedung, String nm_gedung, Double latitude, Double longitude, String photo_ruangan) {
         this.kd_ruangan = kd_ruangan;
         this.nm_ruangan = nm_ruangan;
         this.kd_gedung = kd_gedung;
@@ -62,19 +62,19 @@ public class RuanganModel {
         this.nm_gedung = nm_gedung;
     }
 
-    public String getLatitude() {
+    public Double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(String latitude) {
+    public void setLatitude(Double latitude) {
         this.latitude = latitude;
     }
 
-    public String getLongitude() {
+    public Double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(String longitude) {
+    public void setLongitude(Double longitude) {
         this.longitude = longitude;
     }
 

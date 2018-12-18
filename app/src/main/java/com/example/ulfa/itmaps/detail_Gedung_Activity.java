@@ -26,6 +26,7 @@ public class detail_Gedung_Activity extends AppCompatActivity {
     TextView nama_gedung, kode_gedung;
     ImageView img_gedung;
     Button btnMaps,back_gedung;
+    double latitude, longitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +41,8 @@ public class detail_Gedung_Activity extends AppCompatActivity {
         String nama_gd = i.getStringExtra("nm_gedung");
         String kd_gd = i.getStringExtra("kd_gedung");
         String img_gd = i.getStringExtra("photo_gedung");
-        final double latitude = i.getDoubleExtra("latitude",0);
-        final double longitude = i.getDoubleExtra("longitude",0);
+        latitude = i.getDoubleExtra("latitude",0);
+        longitude = i.getDoubleExtra("longitude",0);
         nama_gedung.setText(nama_gd);
         kode_gedung.setText(kd_gd);
         Glide.with(getApplicationContext()).load(ApiClient.BASE_IMAGE_GEDUNG+img_gd).into(img_gedung);
