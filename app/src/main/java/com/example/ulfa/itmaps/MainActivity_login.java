@@ -15,6 +15,7 @@ import android.text.style.ClickableSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,7 +37,7 @@ import retrofit2.Response;
 public class MainActivity_login extends AppCompatActivity {
     Dialog popup;
     Button btn_login;
-    TextView txt_username, txt_password;
+    EditText txt_username, txt_password;
 
 
     @Override
@@ -44,8 +45,8 @@ public class MainActivity_login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_login);
 
-        txt_username = (TextView)findViewById(R.id.editTextUsername);
-        txt_password = (TextView)findViewById(R.id.editTextPassword);
+        txt_username = (EditText) findViewById(R.id.editTextUsername);
+        txt_password = (EditText) findViewById(R.id.editTextPassword);
         btn_login = (Button)findViewById(R.id.buttonLogin) ;
 
         btn_login.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +67,7 @@ public class MainActivity_login extends AppCompatActivity {
                             Intent i = new Intent(MainActivity_login.this, MainActivity_Home.class);
                             i.putExtra("username", user.getUsername());
                             i.putExtra("nama_user", user.getNama_user());
+                            i.putExtra("password", user.getPassword());
 
                             startActivity(i);
 

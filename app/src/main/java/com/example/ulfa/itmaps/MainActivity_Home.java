@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.example.ulfa.itmaps.Adapter.Rec_slide_adapter;
 import com.example.ulfa.itmaps.Models.ResultRuangan;
 import com.example.ulfa.itmaps.Models.RuanganModel;
+import com.example.ulfa.itmaps.Models.User;
 import com.example.ulfa.itmaps.Rest.ApiClient;
 import com.example.ulfa.itmaps.Rest.ApiInterface;
 
@@ -32,9 +33,8 @@ public class MainActivity_Home extends AppCompatActivity {
     Context mContext;
     ApiInterface mApiInterface;
     CardView chat, ruangan, gedung;
-    ImageView profile;
+    ImageView profile, a;
     TextView NamaUser;
-    private String id_user, username,nama_user, password;
 
 
     @Override
@@ -45,7 +45,12 @@ public class MainActivity_Home extends AppCompatActivity {
         NamaUser = (TextView)findViewById(R.id.idNamaUser);
         Intent i = getIntent();
         String namaUser = i.getStringExtra("nama_user");
+        String usernameNim = i.getStringExtra("username");
+        String passwordNim = i.getStringExtra("password");
+
         NamaUser.setText(namaUser);
+
+
 
 
 
@@ -80,12 +85,19 @@ public class MainActivity_Home extends AppCompatActivity {
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //User user = response.body().getUser();
                 Intent i = new Intent(MainActivity_Home.this, profil.class);
-                i.putExtra("id_user", id_user);
-                i.putExtra("username",username);
-                i.putExtra("nama_user", nama_user);
-                i.putExtra("password",password);
+                i.putExtra("nama_user",namaUser);
+                i.putExtra("username",usernameNim);
+                i.putExtra("password", passwordNim);
                 startActivity(i);
+
+                //i.putExtra("username", user.getUsername());
+//                i.putExtra("id_user", id_user);
+//                i.putExtra("username",username);
+//                i.putExtra("nama_user", nama_user);
+//                i.putExtra("password",password);
+
             }
         });
 
@@ -118,27 +130,5 @@ public class MainActivity_Home extends AppCompatActivity {
 
     }
 
-//
-//    public void GetProfil(){
-//        ApiInterface mApiInterface = ApiClient.getClient().create(ApiInterface.class);
-//        Call<ResponseDelete> updateNote = mApiInterface.updateNote(judul,edNote.getText().toString());
-//        updateNote.enqueue(new Callback<ResponseDelete>() {
-//            @Override
-//            public void onResponse(Call<ResponseDelete> call, Response<ResponseDelete> response) {
-//                String status = response.body().getStatus();
-//                if (status.equals("sukses")){
-//                    Toast.makeText(getApplicationContext(),"Update berhasil",Toast.LENGTH_SHORT).show();
-//                    finish();
-//                }else {
-//                    Toast.makeText(getApplicationContext(),"Update gagal",Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<ResponseDelete> call, Throwable t) {
-//
-//            }
-//        });
-//
-//    }
+
 }

@@ -38,14 +38,14 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="74dp"
-        app:srcCompat="@drawable/editprofile" />
+        app:srcCompat="@drawable/editprofil" />
 
     <LinearLayout
         android:layout_width="297dp"
         android:layout_height="211dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="-6dp"
-        android:layout_marginBottom="82dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="184dp"
         android:layout_toEndOf="@+id/button_back"
         android:gravity="center"
         android:orientation="vertical">
@@ -61,10 +61,11 @@
                 android:layout_height="61dp"
                 android:src="@drawable/nim" />
 
-            <EditText
+            <TextView
                 android:id="@+id/nim_profil"
-                android:layout_width="241dp"
-                android:layout_height="45dp"
+                android:layout_width="235dp"
+                android:layout_height="38dp"
+                android:layout_gravity="bottom"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="6dp"
                 android:text="NIM"
@@ -83,10 +84,11 @@
                 android:layout_height="61dp"
                 android:src="@drawable/nama_profil" />
 
-            <EditText
+            <TextView
                 android:id="@+id/nama_profil"
                 android:layout_width="239dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="6dp"
                 android:text="Nama"
@@ -119,13 +121,13 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_width="329dp"
+        android:layout_height="54dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
-        android:layout_marginBottom="314dp"
-        android:gravity="center">
+        android:layout_marginBottom="88dp"
+        android:gravity="right">
 
         <LinearLayout
             android:id="@+id/linier_Sunting"

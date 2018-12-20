@@ -22,14 +22,15 @@
         tools:layout_editor_absoluteY="16dp" />
 
     <TextView
-        android:textColor="#fff"
         android:id="@+id/textView_User"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/imageView4"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="32dp"
-        android:text="#HeloUser"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="34dp"
+        android:text="Profile"
+        android:textColor="#fff"
         android:textSize="25dp" />
 
     <ImageView
@@ -39,14 +40,14 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="74dp"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@drawable/profil" />
 
     <LinearLayout
         android:layout_width="297dp"
         android:layout_height="211dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="-6dp"
-        android:layout_marginBottom="82dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="193dp"
         android:layout_toEndOf="@+id/button_back"
         android:gravity="center"
         android:orientation="vertical">
@@ -63,10 +64,10 @@
                 android:src="@drawable/nim" />
 
             <TextView
-                android:layout_gravity="center"
                 android:id="@+id/nim_profil"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
+                android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="6dp"
                 android:text="NIM"
@@ -86,10 +87,10 @@
                 android:src="@drawable/nama_profil" />
 
             <TextView
-                android:layout_gravity="center"
                 android:id="@+id/nama_profil"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
+                android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="6dp"
                 android:text="Nama"
@@ -109,10 +110,10 @@
                 android:src="@drawable/password_profil" />
 
             <TextView
-                android:layout_gravity="center"
                 android:id="@+id/password_profil"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
+                android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="6dp"
                 android:text="Password"
@@ -128,7 +129,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
-        android:layout_marginBottom="314dp"
+        android:layout_marginBottom="89dp"
         android:gravity="center">
 
         <LinearLayout

@@ -12,6 +12,7 @@ public class User {
     @SerializedName("telpon") private  String  telpon;
     @SerializedName("photo_user") private  String photo_user;
     @SerializedName("level") private  String level;
+    public User(){}
 
     public User (Integer id_user, String username, String password, String nama_user, String telpon, String photo_user, String level)
     {

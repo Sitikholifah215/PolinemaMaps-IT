@@ -17,10 +17,10 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="-39dp"
         android:layout_marginLeft="28dp"
-        android:layout_marginBottom="136dp"
+        android:layout_marginBottom="135dp"
         android:ems="10"
         android:hint="Username"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:selectAllOnFocus="false"
         android:singleLine="false"
         android:textAlignment="viewStart"
@@ -37,7 +37,7 @@
         android:layout_alignStart="@+id/editTextUsername"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="34dp"
-        android:layout_marginBottom="81dp"
+        android:layout_marginBottom="80dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
@@ -51,17 +51,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="83dp"
-        android:layout_marginBottom="86dp"
+        android:layout_marginEnd="78dp"
+        android:layout_marginBottom="156dp"
+        android:background="@drawable/login"
         android:text="Login"
-        android:textSize="20dp"
         android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="20dp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="67dp"
-        tools:layout_editor_absoluteY="248dp"
-        android:background="@drawable/login"
-        android:textColor="@android:color/background_light"
-        />
+        tools:layout_editor_absoluteY="248dp" />
 
     <TextView
         android:id="@+id/textView"
@@ -69,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="31dp"
+        android:layout_marginBottom="91dp"
 
         android:text="Jika ada masalah silakan Klik  Disini" />
 
@@ -84,11 +83,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="95dp"
+        android:layout_marginTop="29dp"
         android:fontFamily="cursive"
-        android:textColor="#000"
         android:text="Login!"
         android:textAlignment="center"
+        android:textColor="#000"
         android:textSize="80sp"
         android:textStyle="bold|italic" />
 

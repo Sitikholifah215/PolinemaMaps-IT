@@ -29,13 +29,6 @@ public class RuanganViewAdapter extends RecyclerView.Adapter<RuanganViewAdapter.
     public void onBindViewHolder(RuanganViewAdapter.RuanganViewHolder ruanganViewHolder, final int position) {
         ruanganViewHolder.txt_kd_ruangan.setText(listRuangan.get(position).getKd_ruangan());
         ruanganViewHolder.txt_nm_ruangan.setText(listRuangan.get(position).getNm_ruangan());
-//        if (listRuangan.get(position).getPhoto_ruangan().length()>0){
-//            //Picasso.with(holder.itemView.getContext()).load(ApiClient.BASE_URL+listPembeli.get(position).getPhotoId()).into(holder.mPhotoid);
-//            Glide.with(ruanganViewHolder.itemView.getContext()).load(ApiClient.BASE_IMAGE_RUANGAN+listRuangan.get(position).getPhoto_ruangan()).into(ruanganViewHolder.img_ruangan);
-//        }else{
-//            //Picasso.with(holder.itemView.getContext()).load(R.drawable.photoid).into(holder.mPhotoid);
-//            Glide.with(ruanganViewHolder.itemView.getContext()).load(R.mipmap.ic_launcher).into(ruanganViewHolder.img_ruangan);
-//        }
     }
 
     @Override
