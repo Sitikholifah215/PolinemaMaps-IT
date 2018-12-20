@@ -59,7 +59,7 @@ public class MainActivity_ruangan extends AppCompatActivity {
                         RuanganModel ruanganm = listRuanganView.get(position);
                         Toast.makeText(mContext, "KD Ruangan : "+ruanganm.getKd_ruangan(), Toast.LENGTH_LONG).show();
                         Intent i = new Intent(mContext, detail_Ruangan_Activity.class);
-                        i.putExtra("kd_ruangan", ruanganm.getKd_ruangan());
+                        i.putExtra("kd_ruang", ruanganm.getKd_ruangan());
                         i.putExtra("nm_ruangan", ruanganm.getNm_ruangan());
                         i.putExtra("kd_gedung",ruanganm.getKd_gedung());
                         i.putExtra("nm_gedung",ruanganm.getNm_gedung());

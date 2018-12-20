@@ -15,25 +15,26 @@ public class detail_Ruangan_Activity extends AppCompatActivity {
     TextView kd_ruangan, nm_ruangan;
     ImageView img_ruangan;
     Button btnMapsR, btnBackR;
+    double latitude, longitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail__ruangan_);
-        kd_ruangan = findViewById(R.id.textView_kodeGedung);
+        kd_ruangan = findViewById(R.id.textView_KD_Ruangan);
         nm_ruangan = findViewById(R.id.text_nama_ruangan);
         img_ruangan = findViewById(R.id.img_detail_ruangan);
         btnBackR = findViewById(R.id.btn_Back_ruangan);
         btnMapsR = findViewById(R.id.btnMapsRuangan);
 
         Intent i = getIntent();
-        String kd_r = i.getStringExtra("kd_ruangan");
+        String kd_r = i.getStringExtra("kd_ruang");
         String nm_r = i.getStringExtra("nm_ruangan");
         String kd_g = i.getStringExtra("kd_gedung");
         String nm_g = i.getStringExtra("nm_gedung");
         String img_r = i.getStringExtra("photo_ruangan");
-        final double latitude = i.getDoubleExtra("latitude",0);
-        final double longitude = i.getDoubleExtra("longitude",0);
+        latitude = i.getDoubleExtra("latitude",0);
+        longitude = i.getDoubleExtra("longitude",0);
 
         kd_ruangan.setText(kd_r);
         nm_ruangan.setText(nm_r);

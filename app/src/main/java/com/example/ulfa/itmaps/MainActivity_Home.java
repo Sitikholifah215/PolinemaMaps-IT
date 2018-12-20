@@ -19,6 +19,8 @@ import com.example.ulfa.itmaps.Models.RuanganModel;
 import com.example.ulfa.itmaps.Models.User;
 import com.example.ulfa.itmaps.Rest.ApiClient;
 import com.example.ulfa.itmaps.Rest.ApiInterface;
+import com.example.ulfa.itmaps.listener.ClickListener;
+import com.example.ulfa.itmaps.listener.RecyclerTouchListener;
 
 import java.util.List;
 
@@ -117,6 +119,27 @@ public class MainActivity_Home extends AppCompatActivity {
                 List<RuanganModel> listRuanganImage = response.body().getResult();
                 madapter = new Rec_slide_adapter(listRuanganImage);
                 mSlideview.setAdapter(madapter);
+                mSlideview.addOnItemTouchListener(new RecyclerTouchListener(mContext, mSlideview, new ClickListener() {
+                    @Override
+                    public void onClick(View view, int position) {
+                        RuanganModel ruanganm = listRuanganImage.get(position);
+                        Toast.makeText(mContext, "KD Ruangan : "+ruanganm.getKd_ruangan(), Toast.LENGTH_LONG).show();
+                        Intent i = new Intent(mContext, detail_Ruangan_Activity.class);
+                        i.putExtra("kd_ruang", ruanganm.getKd_ruangan());
+                        i.putExtra("nm_ruangan", ruanganm.getNm_ruangan());
+                        i.putExtra("kd_gedung",ruanganm.getKd_gedung());
+                        i.putExtra("nm_gedung",ruanganm.getNm_gedung());
+                        i.putExtra("photo_ruangan",ruanganm.getPhoto_ruangan());
+                        i.putExtra("latitude",ruanganm.getLatitude());
+                        i.putExtra("longitude",ruanganm.getLongitude());
+                        startActivity(i);
+                    }
+
+                    @Override
+                    public void onLongClick(View view, int posi) {
+
+                    }
+                }));
             }
 
             @Override

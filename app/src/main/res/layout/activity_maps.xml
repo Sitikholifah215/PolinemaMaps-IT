@@ -42,11 +42,5 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/imageView6"
         tools:context=".MapsActivity" />
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/btnDirection"
-        android:layout_width="51dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView6"
-        map:layout_anchor="@+id/map"
-        map:layout_anchorGravity="left|center" />
+
 </RelativeLayout>
