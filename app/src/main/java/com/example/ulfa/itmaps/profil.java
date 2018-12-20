@@ -28,9 +28,6 @@ public class profil extends AppCompatActivity {
         setContentView(R.layout.activity_profil);
         //usernameNim.setText(namaUser);
 
-
-        //loadData();
-
         sunting = (LinearLayout)findViewById(R.id.linier_Sunting);
         logout = (LinearLayout)findViewById(R.id.linier_keluar);
 
@@ -47,6 +44,7 @@ public class profil extends AppCompatActivity {
         passwordq.setText(passwordNim);
 
 
+        //onResume();
 
 
         sunting.setOnClickListener(new View.OnClickListener() {
@@ -69,41 +67,22 @@ public class profil extends AppCompatActivity {
             }
         });
     }
+    protected void onStart() {
+        super.onStart();
+        //super.onResume();
+        loadData();
+    }
 
-//
-//    private void loadData()
-//    {
-//        ApiInterface mApiInterface = ApiClient.getClient().create(ApiInterface.class);
-//
-//        Call<ResultUser> mLogin =  mApiInterface.loginRequest(username,password);
-//        mLogin.enqueue(new Callback<ResultUser>() {
-//            @Override
-//            public void onResponse(Call<ResultUser> call, Response<ResultUser> response) {
-//
-//                String status = response.body().getStatus();
-//                if (status.equals("success")){
-//                    User user = response.body().getUser();
-//                    usernameNim = user.getUsername();
-//                    Nama_user = user.getNama_user();
-//                    passwordNim = user.getPassword();
-//
-//                    usernameq.setText(user.getUsername());
-//                    passwordq.setText(user.getPassword());
-//                    namaq.setText(user.getNama_user());
-//
-//
-//
-//
-//                }else {
-//                    Toast.makeText(getApplicationContext(),"fail load data",Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<ResultUser> call, Throwable t) {
-//
-//            }
-//        });
-//
-//    }
+
+    private void loadData()
+    {
+        Intent i = getIntent();
+        String namaUser = i.getStringExtra("nama_user");
+        String usernameNim = i.getStringExtra("username");
+        String passwordNim = i.getStringExtra("password");
+        namaq.setText(namaUser);
+        usernameq.setText(usernameNim);
+        passwordq.setText(passwordNim);
+
+    }
 }

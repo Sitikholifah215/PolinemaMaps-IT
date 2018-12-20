@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:id="@+id/text_nama_ruangan"
+        android:id="@+id/textView_KD_Ruangan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageView6"
@@ -33,7 +33,7 @@
         <ImageView
             android:id="@+id/img_detail_ruangan"
             android:layout_width="match_parent"
-            android:layout_height="112dp"
+            android:layout_height="match_parent"
             android:src="@mipmap/ic_launcher_round" />
 
     </LinearLayout>
@@ -46,7 +46,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="21dp"
         android:layout_marginEnd="19dp"
-        android:layout_marginBottom="82dp"
+        android:layout_marginBottom="111dp"
         android:foregroundGravity="center"
         android:gravity="center"
         android:orientation="vertical">
@@ -83,7 +83,7 @@
                 android:src="@drawable/location" />
 
             <TextView
-                android:id="@+id/deskripsi_map"
+                android:id="@+id/text_nama_ruangan"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
                 android:layout_gravity="center"
@@ -115,7 +115,7 @@
         android:background="@drawable/back" />
 
     <TextView
-        android:id="@+id/textView_KD_Ruangan"
+        android:id="@+id/textView_Detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
