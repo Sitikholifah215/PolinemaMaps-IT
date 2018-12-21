@@ -1,12 +1,21 @@
 package com.example.ulfa.itmaps;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.TextPaint;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -38,7 +47,6 @@ public class MainActivity_Home extends AppCompatActivity {
     ImageView profile, a;
     TextView NamaUser;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +69,7 @@ public class MainActivity_Home extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity_Home.this,PesanActivity.class);
+//                Intent i = new Intent(MainActivity_Home.this,Chatbot_Activity.class);
                 startActivity(i);
             }
         });
@@ -150,6 +159,8 @@ public class MainActivity_Home extends AppCompatActivity {
 
 //            madapter = new Rec_slide_adapter(mImagesUrl,this);
 //            recyclerViewww.setAdapter(madapter);
+
+
 
     }
 

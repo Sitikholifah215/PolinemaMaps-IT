@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="300dp"
     android:layout_height="300dp"
     android:padding="5dp"
     android:layout_gravity="center"
-    android:background="#fff"
-    >
+    android:background="#fff">
 
 
     <TextView
@@ -17,7 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="13dp"
         android:layout_marginTop="10dp"
-        android:text="Bantuan"
+        android:text="UPS -_-"
         android:textSize="25sp"
         android:textStyle="bold" />
 
@@ -29,7 +28,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
         android:layout_marginBottom="142dp"
-        android:text="Jika NIM/NIP anda belum terdaftar silakan hubungi Email berikut! "
+        android:text="Mohon maaf fitur sedang dalam perbaikan, Kami akan segera update fitur ini  "
         android:textAlignment="viewStart"
         android:textSize="20sp" />
 
@@ -41,7 +40,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="5dp"
         android:layout_marginBottom="89dp"
-        android:text="jti_polinema_GID@gmail.com"
+        android:text="Terima Kasih"
         android:textSize="20sp" />
 
     <TextView

@@ -141,7 +141,7 @@
                 android:layout_width="30dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="15dp"
-                android:src="@drawable/img_save_profile" />
+                android:src="@drawable/exchange" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -150,7 +150,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="11dp"
                 android:text="Simpan"
-                android:textColor="#000"
+                android:textColor="#fff"
                 android:textSize="16dp" />
 
         </LinearLayout>

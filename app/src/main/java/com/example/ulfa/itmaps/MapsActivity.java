@@ -55,13 +55,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            checkLocationPermission();
-        }
+//        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            checkLocationPermission();
+//        }
 
         btnBack = findViewById(R.id.btn_Back_Maps);
         kd = findViewById(R.id.txt_nama_g_r);
-        Intent Maps = getIntent();
+        final Intent Maps = getIntent();
         String kd_r_g = Maps.getStringExtra("kd");
         latitude = Maps.getDoubleExtra("latitude",0);
         longitude = Maps.getDoubleExtra("longitude",0);
@@ -88,30 +88,30 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         // Menambahkan marker untuk kota Malang, memindahkan camera, dan melakukan zoom in
-        LatLng tujuan = new LatLng(latitude,longitude);
-        mMap.addMarker(new MarkerOptions().position(tujuan).title("Marker "+kd.getText()));
+        LatLng tujuan = new LatLng(-7.946534, 112.615122);
+        mMap.addMarker(new MarkerOptions().position(tujuan).title("Marker "));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(tujuan,14.0f));
 
     }
 
-    public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
-    public boolean checkLocationPermission(){
-        if (ContextCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                    Manifest.permission.ACCESS_FINE_LOCATION)) {
-                ActivityCompat.requestPermissions(this,
-                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                        MY_PERMISSIONS_REQUEST_LOCATION);
-            } else {
-                ActivityCompat.requestPermissions(this,
-                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                        MY_PERMISSIONS_REQUEST_LOCATION);
-            }
-            return false;
-        } else {
-            return true;
-        }
-    }
+//    public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
+//    public boolean checkLocationPermission(){
+//        if (ContextCompat.checkSelfPermission(this,
+//                Manifest.permission.ACCESS_FINE_LOCATION)
+//                != PackageManager.PERMISSION_GRANTED) {
+//            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+//                    Manifest.permission.ACCESS_FINE_LOCATION)) {
+//                ActivityCompat.requestPermissions(this,
+//                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+//                        MY_PERMISSIONS_REQUEST_LOCATION);
+//            } else {
+//                ActivityCompat.requestPermissions(this,
+//                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+//                        MY_PERMISSIONS_REQUEST_LOCATION);
+//            }
+//            return false;
+//        } else {
+//            return true;
+//        }
+//    }
 }

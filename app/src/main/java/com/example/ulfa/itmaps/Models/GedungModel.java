@@ -10,9 +10,9 @@ public class GedungModel {
     @SerializedName("photo_gedung")
     private String photo_gedung;
     @SerializedName("latitude")
-    private Double latitude;
+    private double latitude;
     @SerializedName("longitude")
-    private Double longitude;
+    private double longitude;
 
 
 
@@ -40,19 +40,19 @@ public class GedungModel {
         this.photo_gedung = photo_gedung;
     }
 
-    public Double getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(Double latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 
-    public Double getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(Double longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 }

@@ -13,9 +13,25 @@ class Ruangan extends REST_Controller {
 	$this->load->model('User_model');
 	}
 
+	//update user
+	public function index_put()
+        {
+            $username = $this->put('username');
+            $data = array(
+                'password' => $this->put('password'));
+            $this->db->where('username', $username);
+            $update = $this->db->update('user', $data);
+            if ($update) {
+                    $this->response(array('status' => 'success', 'result' => $data, 'message' => 'Data berhasil diubah'));
+            } else {
+                    $this->response(array('status' => 'gagal', 'result' => $data, 'message' => 'Data gagal diubah'));
+            }
+        }
+
+	//ruangan ganti nama terminal atau bandara sesuai kebutuhan
 	public function ruangan_get()
 	{
-		$get_ruangan = $this->db->query("SELECT r.kd_ruangan, r.nm_ruangan, r.kd_gedung, g.nm_gedung, r.latitude, r.longitude,r.photo_ruangan FROM ruangan as r JOIN gedung as g on r.kd_gedung = g.kd_gedung")->result();
+		$get_ruangan = $this->db->query("SELECT r.kd_ruangan, r.nm_ruangan, r.kd_gedung, g.nm_gedung, r.latitude,r.longitude,r.photo_ruangan FROM ruangan as r JOIN gedung as g on r.kd_gedung = g.kd_gedung")->result();
 		$this->response(array("status"=>"success","result" => $get_ruangan));
 	}
 
@@ -23,27 +39,6 @@ class Ruangan extends REST_Controller {
 	{
 		$get_gedung = $this->db->query("SELECT g.kd_gedung, g.nm_gedung, g.photo_gedung, g.latitude, g.longitude FROM gedung as g")->result();
 		$this->response(array("status"=>"success","result" => $get_gedung));
-	}
-
-	public function detailgedung_get()
-	{
-		$kd_gedung = $this->get('kd_gedung');
-		$get_gedung = $this->db->query("SELECT g.kd_gedung, g.nm_gedung, g.photo_gedung, g.latitude, g.longitude FROM gedung as g 
-			where g.kd_gedung='".$kd_gedung."'")->result();
-		$this->response(array("status"=>"success","result" => $get_gedung));
-
-		// $this->db->select('*');
-		// $this->db->from('gedung');
-		// $this->db->where('kd_gedung', $kd_gedung);
-		// $query = $this->db->get();
-		// $row = $query->first_row();
-
-		// if ($query->num_rows()==1) {
-		// 	return $this->response(array('status' => 'success', 'result' => $row));
-  //       }
-  //       else{
-  //           return $this->response(array('status'=> 'failed',502));
-  //       }
 	}
 
 	public function index_get()
@@ -83,7 +78,9 @@ class Ruangan extends REST_Controller {
         $this->db->from('user');
         $this->db->where('username', $this->input->post('username'));
         $query = $this->db->get();
-        $row = $query->first_row();
+		$row = $query->first_row();
+		// $query = $this->db->query("SELECT '*' FROM user WHERE username ")->result();
+		// $this->response(array("status"=>"success","result" => $get_gedung));
 
 
         if($query->num_rows()==1){
@@ -94,43 +91,7 @@ class Ruangan extends REST_Controller {
         }
     }
 
-
-    // public function login_post() {
-    //     // Get the post data
-    //     $username = $this->post('username');
-    //     $password = $this->post('password');
-        
-    //     // Validate the post data
-    //     if(!empty($username) && !empty($password)){
-            
-    //         // Check if any user exists with the given credentials
-    //         $con['returnType'] = 'single';
-    //         $con['conditions'] = array(
-    //             'username' => $username,
-    //             'password' => md5($password),
-    //             // 'status' => 1
-    //         );
-    //         $user = $this->User_model->getRows($con);
-            
-    //         if($user){
-    //             // Set the response and exit
-    //             $this->response([
-    //                 'status' => TRUE,
-    //                 'message' => 'User login successful.',
-    //                 'data' => $user
-    //             ], REST_Controller::HTTP_OK);
-    //         }else{
-    //             // Set the response and exit
-    //             //BAD_REQUEST (400) being the HTTP response code
-    //             $this->response("Wrong username or password.", REST_Controller::HTTP_BAD_REQUEST);
-    //         }
-    //     }else{
-    //         // Set the response and exit
-    //         $this->response("Provide username and password.", REST_Controller::HTTP_BAD_REQUEST);
-    //     }
-    // }
-
-
+    
     function updateUser($data_user){
 		$uploaddir = str_replace("application/", "", APPPATH).'upload_user/';
 		if(!file_exists($uploaddir) && !is_dir($uploaddir)) {

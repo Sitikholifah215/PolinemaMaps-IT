@@ -41,29 +41,32 @@
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="333dp"
+        android:layout_width="276dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginBottom="10dp"
+        android:outlineProvider="background"
         android:ems="10"
         android:inputType="textPersonName" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/buttonSend"
+        android:layout_width="35dp"
+        android:layout_height="37dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/send_logo" />
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="393dp"
+        android:layout_height="348dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="127dp" />
+        android:layout_marginTop="142dp" />
 
 </RelativeLayout>

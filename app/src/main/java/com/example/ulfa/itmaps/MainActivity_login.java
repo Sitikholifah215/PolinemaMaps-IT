@@ -60,6 +60,8 @@ public class MainActivity_login extends AppCompatActivity {
                 mLogin.enqueue(new Callback<ResultUser>() {
                     @Override
                     public void onResponse(Call<ResultUser> call, Response<ResultUser> response) {
+
+
                         String status = response.body().getStatus();
                         if (status.equals("success"))
                         {
@@ -69,11 +71,14 @@ public class MainActivity_login extends AppCompatActivity {
                             i.putExtra("nama_user", user.getNama_user());
                             i.putExtra("password", user.getPassword());
 
+                            Toast.makeText(getApplicationContext(),"login berhasil",Toast.LENGTH_SHORT).show();
                             startActivity(i);
-
+                            finish();
                         }
-//                        Log.d("Status", response.body().getStatus());
-//                        List<UserModel> mUser = response.body().getData();
+                        else
+                        {
+                            Toast.makeText(getApplicationContext(), "Perikasa Username dan Password Anda!", Toast.LENGTH_LONG).show();
+                        }
 
                     }
 
