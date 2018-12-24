@@ -49,23 +49,22 @@ public class MainActivity_ruangan extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_ruangan);
-        initRecyclerRuangan();
-
-        pencarian_ruangan = (ListView) findViewById(R.id.rv_main);
-
-        ArrayList<String> arrayRuangan = new ArrayList<>();
-        //iki seng error gak paham nyeluk e
-        arrayRuangan.addAll(Arrays.asList(getResources().getStringArray(R.array.cari_Ruangan)));
-
-        adapter = new ArrayAdapter<String>(
-                MainActivity_ruangan.this,
-                android.R.layout.simple_list_item_1,
-                arrayRuangan
-        );
-        pencarian_ruangan.setAdapter(adapter);
+//        initRecyclerRuangan();
+//
+//        pencarian_ruangan = (ListView) findViewById(R.id.rv_main);
+//
+//        ArrayList<String> arrayRuangan = new ArrayList<>();
+//        //iki seng error gak paham nyeluk e
+//        arrayRuangan.addAll(Arrays.asList(getResources().getStringArray(R.array.cari_Ruangan)));
+//
+//        adapter = new ArrayAdapter<String>(
+//                MainActivity_ruangan.this,
+//                android.R.layout.simple_list_item_1,
+//                arrayRuangan
+//        );
+//        pencarian_ruangan.setAdapter(adapter);
     }
 
-    public boolean onCreateOptions
 
     private void initRecyclerRuangan() {
         mContext = getApplicationContext();
