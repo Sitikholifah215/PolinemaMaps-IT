@@ -17,6 +17,7 @@ import com.example.ulfa.itmaps.Rest.ApiClient;
 import com.example.ulfa.itmaps.Rest.ApiInterface;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -60,6 +61,7 @@ public class detail_Gedung_Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent Maps = new Intent(getApplicationContext(),MapsActivity.class);
+                Maps.putExtra("kd",kd_gd);
                 Maps.putExtra("latitude",latitude);
                 Maps.putExtra("longitude",longitude);
                 startActivity(Maps);

@@ -53,6 +53,7 @@ public class detail_Ruangan_Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent Maps = new Intent(getApplicationContext(),MapsActivity.class);
+                Maps.putExtra("kd",kd_r);
                 Maps.putExtra("latitude",latitude);
                 Maps.putExtra("longitude",longitude);
                 startActivity(Maps);
