@@ -29,15 +29,15 @@
         android:textColor="@color/cardview_light_background"
         android:textSize="18sp" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        android:background="@drawable/back" />
+    <!--<Button-->
+        <!--android:id="@+id/button"-->
+        <!--android:layout_width="50dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_marginStart="0dp"-->
+        <!--android:layout_marginTop="0dp"-->
+        <!--android:background="@drawable/back" />-->
 
     <EditText
         android:id="@+id/editText"
@@ -62,6 +62,7 @@
         android:background="@drawable/send_logo" />
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerviewChat"
         android:layout_width="match_parent"
         android:layout_height="348dp"
         android:layout_alignParentStart="true"

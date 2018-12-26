@@ -63,7 +63,7 @@ public class Chatbot_Activity extends AppCompatActivity {
 
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.search_chat, menu);
-        final MenuItem myActionMenu = menu.findItem(R.id.cari);
+        final MenuItem myActionMenu = menu.findItem(R.id.cariMenu);
         searchView = (android.support.v7.widget.SearchView)myActionMenu.getActionView();
         changeSearchViewTextColor(searchView);
         ((EditText)searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text)).setHintTextColor(getResources().getColor(R.color.colorYellaw));

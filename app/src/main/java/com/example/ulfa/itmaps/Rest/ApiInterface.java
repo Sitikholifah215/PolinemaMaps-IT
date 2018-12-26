@@ -3,6 +3,7 @@ package com.example.ulfa.itmaps.Rest;
 import android.widget.TextView;
 
 import com.example.ulfa.itmaps.Models.GedungModel;
+import com.example.ulfa.itmaps.Models.ResultCariRuangan;
 import com.example.ulfa.itmaps.Models.ResultDetailG;
 import com.example.ulfa.itmaps.Models.ResultGedung;
 import com.example.ulfa.itmaps.Models.ResultRuangan;
@@ -32,6 +33,10 @@ public interface ApiInterface {
     @POST("ruangan/login")
     Call<ResultUser> loginRequest(@Field("username")String username,
                                   @Field("password") String password);
+
+    @FormUrlEncoded
+    @POST("ruangan/chat")
+    Call<ResultCariRuangan> ruanganRequest(@Field("kd_ruangan")String kd_ruangan);
 
 
     @GET("ruangan/ruangan")

@@ -89,6 +89,25 @@ class Ruangan extends REST_Controller {
         else{
             return $this->response(array('status'=> 'failed',502));
         }
+	}
+	
+	public function chat_post()
+	{
+        $this->db->select('*');
+        $this->db->from('ruangan');
+        $this->db->where('kd_ruangan', $this->input->post('kd_ruangan'));
+        $query = $this->db->get();
+		$row = $query->first_row();
+		// $query = $this->db->query("SELECT '*' FROM user WHERE username ")->result();
+		// $this->response(array("status"=>"success","result" => $get_gedung));
+
+
+        if($query->num_rows()==1){
+            return $this->response(array('status' => 'success', 'result' => $row));
+        }
+        else{
+            return $this->response(array('status'=> 'failed',502));
+        }
     }
 
     

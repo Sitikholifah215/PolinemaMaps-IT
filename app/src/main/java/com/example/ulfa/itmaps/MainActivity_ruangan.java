@@ -49,7 +49,7 @@ public class MainActivity_ruangan extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_ruangan);
-//        initRecyclerRuangan();
+       initRecyclerRuangan();
 //
 //        pencarian_ruangan = (ListView) findViewById(R.id.rv_main);
 //

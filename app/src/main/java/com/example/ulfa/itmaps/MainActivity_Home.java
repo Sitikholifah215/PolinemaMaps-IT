@@ -60,10 +60,6 @@ public class MainActivity_Home extends AppCompatActivity {
 
         NamaUser.setText(namaUser);
 
-
-
-
-
         chat = (CardView)findViewById(R.id.menu_chat);
         chat.setOnClickListener(new View.OnClickListener() {
             @Override
